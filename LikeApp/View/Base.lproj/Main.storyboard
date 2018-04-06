@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LikeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5R-TO-7f1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LikeTableViewCell" id="SFT-TB-HF2" customClass="LikeTableViewCell" customModule="LikeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SFT-TB-HF2" id="6DB-D7-hy5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s1-OR-Ukt">
+                                                    <rect key="frame" x="181" y="64" width="14" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="top" secondItem="6DB-D7-hy5" secondAttribute="topMargin" constant="53" id="PmF-0g-Dvk"/>
+                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="centerY" secondItem="6DB-D7-hy5" secondAttribute="centerY" id="bNl-aG-j1w"/>
+                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="centerX" secondItem="6DB-D7-hy5" secondAttribute="centerX" id="nLx-lo-T7s"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="LikeCountLabel" destination="9s1-OR-Ukt" id="NEX-0x-lCr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0jJ-NB-xc0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ol9-te-6H2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c5R-TO-7f1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5C1-Dv-Pil"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c5R-TO-7f1" secondAttribute="trailing" id="KEl-Qs-KxJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c5R-TO-7f1" secondAttribute="bottom" id="ZzH-g3-r6b"/>
+                            <constraint firstItem="c5R-TO-7f1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nEC-p5-j8k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="LikeTableView" destination="c5R-TO-7f1" id="JYy-Ko-s2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Like Giver View Controller-->
+        <scene sceneID="OSV-OM-etY">
+            <objects>
+                <viewController storyboardIdentifier="LikeGiverViewController" id="hLS-75-fPu" customClass="LikeGiverViewController" customModule="LikeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QYX-4U-BMj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXv-SE-5gR">
+                                <rect key="frame" x="166.5" y="313" width="41" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Like"/>
+                                <connections>
+                                    <action selector="LikeAction:" destination="hLS-75-fPu" eventType="touchUpInside" id="HXK-YF-YwQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1D-9N-Gl2">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="BackAction:" destination="hLS-75-fPu" eventType="touchUpInside" id="bPz-jM-Ujd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e1D-9N-Gl2" firstAttribute="leading" secondItem="fmF-nR-mNM" secondAttribute="leading" constant="16" id="Yga-Xh-OZm"/>
+                            <constraint firstItem="xXv-SE-5gR" firstAttribute="centerX" secondItem="QYX-4U-BMj" secondAttribute="centerX" id="clh-Zl-Fzp"/>
+                            <constraint firstItem="e1D-9N-Gl2" firstAttribute="top" secondItem="fmF-nR-mNM" secondAttribute="top" id="dBL-qR-DwG"/>
+                            <constraint firstItem="xXv-SE-5gR" firstAttribute="centerY" secondItem="QYX-4U-BMj" secondAttribute="centerY" id="xAI-TV-04s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fmF-nR-mNM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5l-V1-9uD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="134"/>
+        </scene>
+    </scenes>
+</document>

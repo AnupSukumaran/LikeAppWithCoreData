@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A17617A207675310088CBC6 /* LikeClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A176178207675310088CBC6 /* LikeClass+CoreDataClass.swift */; };
+		5A17617B207675310088CBC6 /* LikeClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A176179207675310088CBC6 /* LikeClass+CoreDataProperties.swift */; };
+		5A17617E20767B480088CBC6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A17617D20767B480088CBC6 /* Constants.swift */; };
 		5A18C7B820763E760026094A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18C7B720763E760026094A /* AppDelegate.swift */; };
 		5A18C7BA20763E760026094A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18C7B920763E760026094A /* ViewController.swift */; };
 		5A18C7BD20763E760026094A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A18C7BB20763E760026094A /* Main.storyboard */; };
 		5A18C7C020763E760026094A /* LikeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A18C7BE20763E760026094A /* LikeApp.xcdatamodeld */; };
 		5A18C7C220763E770026094A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A18C7C120763E770026094A /* Assets.xcassets */; };
 		5A18C7C520763E770026094A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A18C7C320763E770026094A /* LaunchScreen.storyboard */; };
+		5A18C7CE20763EC90026094A /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18C7CD20763EC90026094A /* PersistanceService.swift */; };
+		5A18C7D4207641CE0026094A /* LikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18C7D3207641CE0026094A /* LikeTableViewCell.swift */; };
+		5A18C7D62076432F0026094A /* LikeGiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18C7D52076432F0026094A /* LikeGiverViewController.swift */; };
+		5A18C7D82076455B0026094A /* LikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A18C7D72076455B0026094A /* LikeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A176178207675310088CBC6 /* LikeClass+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikeClass+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5A176179207675310088CBC6 /* LikeClass+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikeClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5A17617D20767B480088CBC6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5A18C7B420763E760026094A /* LikeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LikeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A18C7B720763E760026094A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A18C7B920763E760026094A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +34,10 @@
 		5A18C7C120763E770026094A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A18C7C420763E770026094A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A18C7C620763E770026094A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A18C7CD20763EC90026094A /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
+		5A18C7D3207641CE0026094A /* LikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewCell.swift; sourceTree = "<group>"; };
+		5A18C7D52076432F0026094A /* LikeGiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeGiverViewController.swift; sourceTree = "<group>"; };
+		5A18C7D72076455B0026094A /* LikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A17617C20767B2D0088CBC6 /* ConstansFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5A17617D20767B480088CBC6 /* Constants.swift */,
+			);
+			path = ConstansFiles;
+			sourceTree = "<group>";
+		};
 		5A18C7AB20763E750026094A = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +78,62 @@
 		5A18C7B620763E760026094A /* LikeApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A176178207675310088CBC6 /* LikeClass+CoreDataClass.swift */,
+				5A176179207675310088CBC6 /* LikeClass+CoreDataProperties.swift */,
+				5A17617C20767B2D0088CBC6 /* ConstansFiles */,
+				5A18C7D2207641B00026094A /* TableCells */,
 				5A18C7B720763E760026094A /* AppDelegate.swift */,
-				5A18C7B920763E760026094A /* ViewController.swift */,
-				5A18C7BB20763E760026094A /* Main.storyboard */,
+				5A18C7D1207641880026094A /* Model */,
+				5A18C7D0207641820026094A /* View */,
+				5A18C7CF207641620026094A /* Controllers */,
+				5A18C7CC20763E970026094A /* CoreDataRelated */,
 				5A18C7C120763E770026094A /* Assets.xcassets */,
 				5A18C7C320763E770026094A /* LaunchScreen.storyboard */,
 				5A18C7C620763E770026094A /* Info.plist */,
 				5A18C7BE20763E760026094A /* LikeApp.xcdatamodeld */,
 			);
 			path = LikeApp;
+			sourceTree = "<group>";
+		};
+		5A18C7CC20763E970026094A /* CoreDataRelated */ = {
+			isa = PBXGroup;
+			children = (
+				5A18C7CD20763EC90026094A /* PersistanceService.swift */,
+			);
+			path = CoreDataRelated;
+			sourceTree = "<group>";
+		};
+		5A18C7CF207641620026094A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A18C7B920763E760026094A /* ViewController.swift */,
+				5A18C7D52076432F0026094A /* LikeGiverViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A18C7D0207641820026094A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A18C7BB20763E760026094A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A18C7D1207641880026094A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A18C7D72076455B0026094A /* LikeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A18C7D2207641B00026094A /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				5A18C7D3207641CE0026094A /* LikeTableViewCell.swift */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +208,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A18C7C020763E760026094A /* LikeApp.xcdatamodeld in Sources */,
+				5A18C7D62076432F0026094A /* LikeGiverViewController.swift in Sources */,
+				5A18C7CE20763EC90026094A /* PersistanceService.swift in Sources */,
 				5A18C7BA20763E760026094A /* ViewController.swift in Sources */,
+				5A18C7D4207641CE0026094A /* LikeTableViewCell.swift in Sources */,
+				5A17617E20767B480088CBC6 /* Constants.swift in Sources */,
+				5A18C7D82076455B0026094A /* LikeModel.swift in Sources */,
 				5A18C7B820763E760026094A /* AppDelegate.swift in Sources */,
+				5A17617A207675310088CBC6 /* LikeClass+CoreDataClass.swift in Sources */,
+				5A17617B207675310088CBC6 /* LikeClass+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
