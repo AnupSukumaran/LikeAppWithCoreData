@@ -14,42 +14,33 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var LikeTableView: UITableView!
     
-  //  var likeSaver = [LikeModel]()
+  
     var likeSaver2 = [LikeClass]()
      
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("IsEmpty = \(likeSaver2.isEmpty)")
-        
         fetchingDataFromCore()
-  
         PostingNotification()
       
-        
     }
     
     func PostingNotification(){
         NotificationCenter.default.addObserver(forName: Constants.sharedInstance, object: nil, queue: nil, using: {_ in
-            //var likeSUb = [LikeClass]()
+    
             print("Cell Id = \(Constants.sharedInt.id)")
-           // likeSUb = self.likeSaver2
-            //let data2 = LikeClass(context: PersistanceService.context)
-          // likeSUb[Constants.sharedInt.id].likecount += 1
-             self.likeSaver2[Constants.sharedInt.id].likecount += 1
-            
-          //  self.likeSaver2 = likeSUb
+            self.likeSaver2[Constants.sharedInt.id].likecount += 1
             PersistanceService.saveContext()
             self.LikeTableView.reloadData()
+            
         })
     }
     
     func fetchingDataFromCore() {
         
         let fetchRequest: NSFetchRequest<LikeClass> = LikeClass.fetchRequest()
-       // fetchRequest.sortDescriptors = [NSSortDescriptor(key: "likecount", ascending: true)]
-       // fetchRequest.sortDescriptors = [NSS]
+       
         do {
             print("FetchingWotking")
             let likes =  try PersistanceService.context.fetch(fetchRequest)

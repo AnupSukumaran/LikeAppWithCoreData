@@ -18,6 +18,6 @@ struct Constants{
     var id = 0
    static let sharedInstance = NSNotification.Name("Notify")
     
-    //let HiddenEntityReliever = NSNotification.Name("ShowMeTheRealFace")
+   
     
 }
