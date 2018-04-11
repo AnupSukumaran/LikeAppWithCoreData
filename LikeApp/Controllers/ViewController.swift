@@ -14,16 +14,62 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var LikeTableView: UITableView!
     
-  
+     var providersAPI = APIService()
     var likeSaver2 = [LikeClass]()
+    
+    var modelContent = [ModelContents]()
      
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        calllingURl()
+        
+        
+        
+    }
+    
+    func calllingURl() {
+        
+        providersAPI.getDataWith { (values) in
+            
+            switch values {
+            case .Success(let data):
+                
+                
+                self.jsonResultParse(data as AnyObject)
+            case .Error(let message):
+                print("Error = \(message)")
+            }
+            
+        }
+        
+    }
+    
+    func jsonResultParse(_ json:AnyObject) {
+        
+        let JsonArray = json as! NSArray
+        print("jsonaArray = \(JsonArray)")
+        
+        if JsonArray.count != 0 {
+            
+            for i:Int in 0 ..< JsonArray.count {
+                
+                let jObject = JsonArray[i] as! NSDictionary
+                let uModelCont:ModelContents = ModelContents()
+                
+                uModelCont.artistName = (jObject["artistName"] as? String)
+                uModelCont.artistUrl = (jObject["artistUrl"] as? String)
+                modelContent.append(uModelCont)
+
+            }
+            LikeTableView.reloadData()
+        }
+        
         fetchingDataFromCore()
         PostingNotification()
-      
+        
     }
     
     func PostingNotification(){
@@ -60,9 +106,9 @@ class ViewController: UIViewController {
     
     func addLikes() {
         print("addLikes Working")
-        //likeSaver2.removeAll()
         
-        for i in 0..<10 {
+        
+        for i in 0..<modelContent.count {
             
             print("FORCount = \(i)")
             
@@ -87,13 +133,15 @@ extension ViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return likeSaver2.count
+        return modelContent.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikeTableViewCell", for: indexPath) as! LikeTableViewCell
         
         cell.LikeCountLabel.text = String(likeSaver2[indexPath.row].likecount)
+        cell.TopLineLabel.text = modelContent[indexPath.row].artistName
+        cell.descTextView.text = modelContent[indexPath.row].artistUrl
         
         return cell
     }

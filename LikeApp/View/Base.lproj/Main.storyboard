@@ -31,20 +31,47 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s1-OR-Ukt">
-                                                    <rect key="frame" x="181" y="64" width="14" height="21"/>
+                                                    <rect key="frame" x="346" y="111.5" width="14" height="27.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27.5" id="IjC-Yd-Pbl"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tu-gP-GGW">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Boe-vQ-dpr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8zW-Jg-YGS">
+                                                    <rect key="frame" x="15" y="40" width="323" height="99"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="top" secondItem="6DB-D7-hy5" secondAttribute="topMargin" constant="53" id="PmF-0g-Dvk"/>
-                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="centerY" secondItem="6DB-D7-hy5" secondAttribute="centerY" id="bNl-aG-j1w"/>
-                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="centerX" secondItem="6DB-D7-hy5" secondAttribute="centerX" id="nLx-lo-T7s"/>
+                                                <constraint firstItem="0tu-gP-GGW" firstAttribute="top" secondItem="6DB-D7-hy5" secondAttribute="topMargin" id="9bl-sY-XB9"/>
+                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="trailing" secondItem="6DB-D7-hy5" secondAttribute="trailingMargin" id="Ehs-es-kQe"/>
+                                                <constraint firstItem="0tu-gP-GGW" firstAttribute="trailing" secondItem="6DB-D7-hy5" secondAttribute="trailingMargin" id="GW4-J3-Slp"/>
+                                                <constraint firstItem="0tu-gP-GGW" firstAttribute="leading" secondItem="6DB-D7-hy5" secondAttribute="leadingMargin" id="Jj8-6N-rgQ"/>
+                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="leading" secondItem="8zW-Jg-YGS" secondAttribute="trailing" constant="8" id="OBZ-C5-hx2"/>
+                                                <constraint firstItem="8zW-Jg-YGS" firstAttribute="top" secondItem="0tu-gP-GGW" secondAttribute="bottom" constant="8" id="iyw-Vr-4UF"/>
+                                                <constraint firstItem="9s1-OR-Ukt" firstAttribute="bottom" secondItem="6DB-D7-hy5" secondAttribute="bottomMargin" id="pGa-7k-98Z"/>
+                                                <constraint firstItem="8zW-Jg-YGS" firstAttribute="leading" secondItem="6DB-D7-hy5" secondAttribute="leadingMargin" id="pVZ-8S-rZG"/>
+                                                <constraint firstItem="8zW-Jg-YGS" firstAttribute="bottom" secondItem="6DB-D7-hy5" secondAttribute="bottomMargin" id="vFC-Zo-kS5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="LikeCountLabel" destination="9s1-OR-Ukt" id="NEX-0x-lCr"/>
+                                            <outlet property="TopLineLabel" destination="0tu-gP-GGW" id="m4M-rD-1rN"/>
+                                            <outlet property="descTextView" destination="8zW-Jg-YGS" id="CUl-rd-Yie"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -11,6 +11,8 @@ import UIKit
 class LikeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var LikeCountLabel: UILabel!
+    @IBOutlet weak var TopLineLabel: UILabel!
     
-
+    @IBOutlet weak var descTextView: UITextView!
+    
 }
