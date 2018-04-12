@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OCc-8h-gEJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5R-TO-7f1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LikeTableViewCell" id="SFT-TB-HF2" customClass="LikeTableViewCell" customModule="LikeApp" customModuleProvider="target">
@@ -86,17 +86,84 @@
                             <constraint firstItem="c5R-TO-7f1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5C1-Dv-Pil"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c5R-TO-7f1" secondAttribute="trailing" id="KEl-Qs-KxJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c5R-TO-7f1" secondAttribute="bottom" id="ZzH-g3-r6b"/>
-                            <constraint firstItem="c5R-TO-7f1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nEC-p5-j8k"/>
+                            <constraint firstItem="c5R-TO-7f1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="nEC-p5-j8k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0nS-lO-vl8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="TcE-zP-gXO">
+                            <connections>
+                                <action selector="ToSearchVC:" destination="BYZ-38-t0r" id="1gr-Dq-1ys"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="LikeTableView" destination="c5R-TO-7f1" id="JYy-Ko-s2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="821.60000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="o7j-jr-YlO">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="rCP-Fe-Lek" customClass="SearchViewController" customModule="LikeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Js4-O9-7oD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErP-5B-B5S">
+                                <rect key="frame" x="16" y="64" width="343" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TextChanged:" destination="rCP-Fe-Lek" eventType="editingChanged" id="CvY-h1-m8t"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="41h-PJ-ZX3">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchTableTableViewCell" id="DVw-dt-FzR" customClass="SearchTableTableViewCell" customModule="LikeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DVw-dt-FzR" id="NGE-3E-bbg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ErP-5B-B5S" firstAttribute="trailing" secondItem="4q1-RU-JZL" secondAttribute="trailing" constant="-16" id="GAQ-7y-rpU"/>
+                            <constraint firstItem="41h-PJ-ZX3" firstAttribute="top" secondItem="ErP-5B-B5S" secondAttribute="bottom" id="J1F-Fs-nAZ"/>
+                            <constraint firstItem="4q1-RU-JZL" firstAttribute="trailing" secondItem="41h-PJ-ZX3" secondAttribute="trailing" id="V0p-qG-dqe"/>
+                            <constraint firstItem="4q1-RU-JZL" firstAttribute="bottom" secondItem="41h-PJ-ZX3" secondAttribute="bottom" id="axF-NY-ZHX"/>
+                            <constraint firstItem="ErP-5B-B5S" firstAttribute="top" secondItem="4q1-RU-JZL" secondAttribute="top" id="jJh-Qd-0j1"/>
+                            <constraint firstItem="ErP-5B-B5S" firstAttribute="leading" secondItem="4q1-RU-JZL" secondAttribute="leading" constant="16" id="lAJ-EQ-EHd"/>
+                            <constraint firstItem="41h-PJ-ZX3" firstAttribute="leading" secondItem="4q1-RU-JZL" secondAttribute="leading" id="nvf-Zo-W1u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4q1-RU-JZL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yiv-Mj-y5i">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aLx-B3-fsO">
+                            <connections>
+                                <action selector="backButton:" destination="rCP-Fe-Lek" id="RJg-od-m9S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SearchField" destination="ErP-5B-B5S" id="Dk6-G7-0sZ"/>
+                        <outlet property="searchTable" destination="41h-PJ-ZX3" id="KQP-v7-XSV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8c-3t-mKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1496.8" y="806.44677661169419"/>
         </scene>
         <!--Like Giver View Controller-->
         <scene sceneID="OSV-OM-etY">
@@ -134,7 +201,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5l-V1-9uD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="134"/>
+            <point key="canvasLocation" x="1792.8" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PAC-D7-sgM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OCc-8h-gEJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ged-ij-fkp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sFo-5s-CRD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mez-ml-aN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b1P-i2-Y5r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7fP-96-bEy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HZv-Xp-MqP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rCP-Fe-Lek" kind="relationship" relationship="rootViewController" id="bsB-fe-wAU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gi2-84-faN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.60000000000002" y="807.34632683658174"/>
         </scene>
     </scenes>
 </document>

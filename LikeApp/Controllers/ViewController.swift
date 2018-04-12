@@ -9,8 +9,14 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+   
     
     @IBOutlet weak var LikeTableView: UITableView!
     
@@ -23,11 +29,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+
         calllingURl()
-        
-        
-        
+    
     }
     
     func calllingURl() {
@@ -83,6 +87,19 @@ class ViewController: UIViewController {
         })
     }
     
+    
+    @IBAction func ToSearchVC(_ sender: UIBarButtonItem) {
+        //SearchViewController
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        
+       let nav = UINavigationController(rootViewController: vc)
+        
+        present(nav, animated: true, completion: nil)
+        
+    }
+    
+    
     func fetchingDataFromCore() {
         
         let fetchRequest: NSFetchRequest<LikeClass> = LikeClass.fetchRequest()
@@ -125,6 +142,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
        
     }
+    
+   
 
 
 }
