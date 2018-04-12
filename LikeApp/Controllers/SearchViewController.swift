@@ -28,11 +28,11 @@ class SearchViewController: UIViewController {
         
         SearchField.allowsEditingTextAttributes = true
         SearchField.autocorrectionType = UITextAutocorrectionType.no
-        
-
-        
+      
         calllingURl()
     }
+    
+    // uievent type  is edit changed of UItextfield - textfield action
     
     @IBAction func TextChanged(_ sender: UITextField) {
         
@@ -52,13 +52,10 @@ class SearchViewController: UIViewController {
     
     
     func calllingURl() {
-        
-        
-        
+       
         providersAPI.searchApi { (values) in
             switch values {
             case .Success(let data):
-                
                 
                 self.jsonResultParse(data as AnyObject)
                
@@ -117,9 +114,7 @@ extension SearchViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
-    
+  
 }
 
 extension SearchViewController: UITextFieldDelegate {
