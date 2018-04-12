@@ -59,14 +59,33 @@ class SearchViewController: UIViewController {
             switch values {
             case .Success(let data):
                 
-                print("DDDD123 = \(data)")
                 
-               // self.jsonResultParse(data as AnyObject)
+                self.jsonResultParse(data as AnyObject)
+               
             case .Error(let message):
                 print("Error = \(message)")
             }
         }
         
+    }
+    
+    func jsonResultParse(_ json:AnyObject) {
+        let JsonArray = json as! NSArray
+        
+        print("jsonaArray = \(JsonArray.count)")
+        
+        if JsonArray.count != 0 {
+            for i:Int in 0 ..< JsonArray.count {
+                
+                let jobject = JsonArray[i] as! NSDictionary
+                let UsearchDetails: SearchDetails = SearchDetails()
+                
+                UsearchDetails.photo = jobject["photo"] as? String ?? ""
+                UsearchDetails.name = jobject["name"] as? String ?? ""
+                searchDetails.append(UsearchDetails)
+            }
+            searchTable.reloadData()
+        }
     }
     
     
@@ -86,12 +105,15 @@ extension SearchViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        print("Couunt = \(searchDetails.count)")
+        return searchDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableTableViewCell", for: indexPath) as! SearchTableTableViewCell
+        
+       cell.nameLabel.text = searchDetails[indexPath.row].name
         
         return cell
     }

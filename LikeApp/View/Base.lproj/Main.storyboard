@@ -132,9 +132,30 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DVw-dt-FzR" id="NGE-3E-bbg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gp6-uv-w2e">
+                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gp6-uv-w2e" firstAttribute="leading" secondItem="NGE-3E-bbg" secondAttribute="leadingMargin" id="SwF-LW-HoE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gp6-uv-w2e" secondAttribute="bottom" id="brF-bq-PeQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gp6-uv-w2e" secondAttribute="trailing" id="qf0-VN-u3t"/>
+                                                <constraint firstItem="gp6-uv-w2e" firstAttribute="top" secondItem="NGE-3E-bbg" secondAttribute="topMargin" id="yxE-f9-y2P"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="gp6-uv-w2e" id="L5Q-YZ-uIL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rCP-Fe-Lek" id="9a8-eb-CSn"/>
+                                    <outlet property="delegate" destination="rCP-Fe-Lek" id="VE0-HH-DAl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
