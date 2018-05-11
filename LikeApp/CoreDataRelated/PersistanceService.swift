@@ -13,7 +13,7 @@ class PersistanceService {
     
     private init() {}
     
-    
+    //coredata
     
     static var persistentContainer: NSPersistentContainer = {
         /*
