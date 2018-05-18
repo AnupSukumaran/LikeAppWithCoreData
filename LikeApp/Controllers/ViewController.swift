@@ -9,12 +9,10 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpdating {
+class ViewController: UIViewController {
     
     
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
+    
     
    
     
