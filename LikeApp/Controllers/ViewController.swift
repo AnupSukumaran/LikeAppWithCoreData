@@ -11,14 +11,10 @@ import CoreData
 
 class ViewController: UIViewController {
     
-    
-    
-    
-   
-    
+    // table gets connected to the uiviewcontroller
     @IBOutlet weak var LikeTableView: UITableView!
     
-     var providersAPI = APIService()
+    var providersAPI = APIService()
     var likeSaver2 = [LikeClass]()
     
     var modelContent = [ModelContents]()
@@ -29,8 +25,24 @@ class ViewController: UIViewController {
         
 
         calllingURl()
+       // callBundle()
     
     }
+    
+//    func callBundle(){
+//        if let filepath = Bundle.main.path(forResource: "Info", ofType: "plist") {
+//            do {
+//                let contents = try String(contentsOfFile: filepath)
+//                print("contents = \(contents)")
+//            } catch {
+//                print("contents could not be loaded")
+//                // contents could not be loaded
+//            }
+//        } else {
+//             print("example.txt not found!")
+//            // example.txt not found!
+//        }
+//    }
     
     func calllingURl() {
         
@@ -74,6 +86,7 @@ class ViewController: UIViewController {
         
     }
     
+    //this function gets called from the the vc and adds the observer for Notification center for the name given in singletone and a
     func PostingNotification(){
         NotificationCenter.default.addObserver(forName: Constants.sharedInstance, object: nil, queue: nil, using: {_ in
     
@@ -97,7 +110,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+    // function to fetch data
     func fetchingDataFromCore() {
         
         let fetchRequest: NSFetchRequest<LikeClass> = LikeClass.fetchRequest()
@@ -108,6 +121,7 @@ class ViewController: UIViewController {
             
             if likes.isEmpty {
                 print(" likes.isEmpty = \( likes.isEmpty)")
+                //function to add likes
                 addLikes()
             }else{
                 self.likeSaver2 = likes
@@ -119,6 +133,7 @@ class ViewController: UIViewController {
         
     }
     
+    //this function is called if the like class is empty to fill in the '0' in  like label initially
     func addLikes() {
         print("addLikes Working")
         
