@@ -39,7 +39,7 @@ class PersistanceService {
             }
         }
     }
-    //calling context of type NSManagedObjectContext to get access to the context.
+    //calling context of type NSManagedObjectContext to get access to the content in the class by calling the "fetchRequest" .
     static var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }

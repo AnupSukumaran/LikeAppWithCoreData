@@ -51,10 +51,11 @@ class APIService: NSObject {
                     completion(.Error("missing"))
                     return
                 }
-                // calling the completion block after parsing the data
+                // calling the completion block after parsing the data as type [[String: AnyObject]]
                 completion(.Success(itemsJsonArray))
             case .failure(let error):
                 print("Error = \(error.localizedDescription)")
+                //this si the faliur case calling the completion block
                  completion(.Error("regi"))
                 
             }
@@ -62,11 +63,13 @@ class APIService: NSObject {
     }
     
     
+    // calling the searchApi function , the api for search fucntion is called with "keywords" parameters received from
+    //
     func searchApi(completion: @escaping (Result<[[String: AnyObject]]>) -> ()) {
         
         print("From Api Key = \(keyWords)")
         //let parameters = ["keyword": "atm"]
-        
+         // calling the alamofire request with get method  with  parameter Keywords
         Alamofire.request(baseUrl.link2 + "keyword=\(keyWords)", method: .post, parameters: ["":""], encoding: JSONEncoding.default , headers: nil).validate().responseJSON { (response) in
             switch response.result {
             case .success:
